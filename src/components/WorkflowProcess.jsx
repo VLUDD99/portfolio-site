@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { PhotoPlaceholder } from './IOSDecorations';
 
 export default function WorkflowProcess() {
   const screenshots = [
@@ -44,13 +43,12 @@ export default function WorkflowProcess() {
           </p>
         </motion.div>
 
-        {/* Desktop: scattered layout */}
-        <div className="hidden md:flex items-center justify-center gap-6 relative"
-             style={{ minHeight: '500px' }}>
+        {/* Desktop: 3-column grid */}
+        <div className="hidden md:grid grid-cols-3 gap-8">
           {screenshots.map((screen, i) => (
             <motion.div
               key={screen.title}
-              initial={{ opacity: 0, y: 60, rotate: 0 }}
+              initial={{ opacity: 0, y: 40, rotate: 0 }}
               whileInView={{ opacity: 1, y: 0, rotate: screen.rotation }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{
@@ -59,7 +57,7 @@ export default function WorkflowProcess() {
                 ease: [0.2, 0.8, 0.2, 1]
               }}
               whileHover={{
-                scale: 1.05,
+                scale: 1.04,
                 rotate: 0,
                 zIndex: 10,
                 transition: { duration: 0.3 }
@@ -67,24 +65,19 @@ export default function WorkflowProcess() {
               className="relative"
               style={{
                 transform: `rotate(${screen.rotation}deg)`,
-                zIndex: 3 - i
               }}>
               {/* Polaroid-style frame */}
-              <div className="p-4 rounded-lg"
+              <div className="p-4 rounded-lg w-full"
                    style={{
                      background: 'var(--notes-card)',
                      boxShadow: '0 10px 40px var(--notes-shadow-hover)',
                      border: '1px solid var(--notes-separator)',
-                     width: '320px'
                    }}>
-                {/* TODO: Заменить на реальное фото: public/images/workflow-{i+1}.jpg */}
                 <img
-                  src={screen.image} 
-                  alt={screen.title} 
-                  width={288}
-                  height={162}
-                  className="mb-3"
-                  style={{ aspectRatio: '16/9' }}
+                  src={screen.image}
+                  alt={screen.title}
+                  className="w-full mb-3 rounded-sm"
+                  style={{ aspectRatio: '16/9', objectFit: 'cover' }}
                 />
                 <div className="text-center">
                   <p className="font-semibold text-[15px]" style={{ color: 'var(--notes-title)' }}>

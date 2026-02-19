@@ -1,13 +1,12 @@
-import { useState, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
-import { Search, Play } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Search } from 'lucide-react';
 import { portfolio } from '../data/content';
+import LazyVideo from './LazyVideo';
 
 export default function Portfolio() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTag, setActiveTag] = useState(null);
-  const ref = useRef(null);
-
   const allTags = [...new Set(portfolio.flatMap(p => p.tags))];
 
   const filtered = portfolio.filter(item => {
@@ -19,7 +18,7 @@ export default function Portfolio() {
   });
 
   return (
-    <section id="portfolio" ref={ref} className="py-12 md:py-24 px-4 md:px-6 lg:px-12">
+    <section id="portfolio" className="py-12 md:py-24 px-4 md:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -81,52 +80,15 @@ export default function Portfolio() {
                 viewport={{ once: true, margin: "-30px" }}
                 transition={{ delay: i * 0.08, duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
                 layout
-                className="note-card paper-texture min-w-[260px] max-w-[280px] md:min-w-0 md:max-w-none snap-start flex-shrink-0 md:flex-shrink">
+                className="rounded-2xl overflow-hidden border snap-start flex-shrink-0 md:flex-shrink min-w-[220px] max-w-[240px] md:min-w-0 md:max-w-none"
+                style={{
+                  padding: '6px',
+                  background: 'var(--notes-card)',
+                  borderColor: 'var(--notes-separator)',
+                  boxShadow: '0 1px 4px var(--notes-shadow)',
+                }}>
 
-                {/* Video: iframe if videoUrl exists, otherwise placeholder */}
-                {item.videoUrl ? (
-                  <iframe
-                    src={item.videoUrl}
-                    className="w-full rounded-xl mb-5"
-                    style={{ aspectRatio: '9/16', backgroundColor: '#000' }}
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="video-placeholder mb-5 group cursor-pointer w-full">
-                    <div className="relative z-10">
-                      <div className="w-14 h-14 rounded-full bg-white/15 flex items-center justify-center backdrop-blur-md group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
-                        <Play size={22} fill="white" className="text-white ml-0.5" />
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Title */}
-                <h3 className="text-[17px] font-semibold mb-2" style={{ color: 'var(--notes-title)' }}>
-                  {item.title}
-                </h3>
-                <p className="text-[14px] leading-relaxed mb-4" style={{ color: 'var(--notes-body)' }}>
-                  {item.description}
-                </p>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between w-full pt-3"
-                     style={{ borderTop: '1px solid var(--notes-separator)' }}>
-                  <div className="flex flex-wrap gap-1.5 items-center">
-                    {item.tags.map(tag => (
-                      <span key={tag}
-                        className="tag-pill inline-flex items-center justify-center !py-2 !px-2.5 !text-[10px] !leading-none !min-h-0 !min-w-0 !rounded-md">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <span className="text-[11px] flex-shrink-0 ml-2" style={{ color: 'var(--notes-tertiary)' }}>
-                    {item.date}
-                  </span>
-                </div>
+                <LazyVideo videoUrl={item.videoUrl} thumbnail={item.thumbnail} />
               </motion.div>
             ))}
           </AnimatePresence>

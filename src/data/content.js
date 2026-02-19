@@ -31,10 +31,10 @@ export const services = [
 export const portfolio = [
   {
     id: 1,
-    title: "Фитнес-бренд — серия Reels",
-    description: "Серия из 12 вертикальных роликов для продвижения спортивных аксессуаров",
-    videoUrl:"https://vk.com/clip_ext.php?oid=-232053066&id=456239025&autoplay=1",
-    result: "2.4M просмотров",
+    title: "",
+    description: "",
+    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239025&autoplay=0",
+    thumbnail: "/images/TN1.png", // ← /images/thumb1.jpg
     tags: ["Reels", "Моушн"],
     date: "12 фев 2025",
   },
@@ -43,7 +43,7 @@ export const portfolio = [
     title: "Эксперт по продажам — Shorts",
     description: "Упаковка контента для бизнес-тренера: динамичные нарезки с субтитрами",
     videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239023&autoplay=0",
-    result: "850K просмотров",
+    thumbnail: "/images/TN2.png", // ← /images/thumb2.jpg
     tags: ["Shorts", "Эксперт"],
     date: "8 фев 2025",
   },
@@ -51,18 +51,17 @@ export const portfolio = [
     id: 3,
     title: "Маркетинговое агентство — TikTok",
     description: "Креативные ролики для привлечения клиентов в digital-агентство",
-    videoUrl:"https://vk.com/clip_ext.php?oid=-232053066&id=456239026&autoplay=0",
-    result: "1.2M просмотров",
+    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239026&autoplay=0",
+    thumbnail: "/images/TN3.png", // ← /images/thumb3.jpg
     tags: ["Reels"],
     date: "1 фев 2025",
   },
-
   {
     id: 4,
     title: "Онлайн-школа — промо-ролики",
     description: "Серия рекламных видео для запуска онлайн-курса по маркетингу",
-    videoUrl:"https://vk.com/clip_ext.php?oid=-232053066&id=456239027&autoplay=0",
-    result: "560K просмотров",
+    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239027&autoplay=0",
+    thumbnail: "/images/TN4.png", // ← /images/thumb4.jpg
     tags: ["Моушн"],
     date: "18 янв 2025",
   },
@@ -70,9 +69,9 @@ export const portfolio = [
     id: 5,
     title: "Ресторан — контент для Stories",
     description: "Аппетитный видеоконтент с моушн-графикой для ресторана японской кухни",
-    videoUrl:"https://vk.com/clip_ext.php?oid=-232053066&id=456239028&autoplay=0",
-    result: "+25% бронирований",
-    tags: ["Моушн", "Анимавция лого"],
+    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239028&autoplay=0",
+    thumbnail: "/images/TN5.png", // ← /images/thumb5.jpg
+    tags: ["Моушн", "Анимация лого"],
     date: "10 янв 2025",
   },
 ];
