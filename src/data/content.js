@@ -33,44 +33,53 @@ export const portfolio = [
     id: 1,
     title: "",
     description: "",
-    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239025&autoplay=0",
-    thumbnail: "/images/TN1.png", // ← /images/thumb1.jpg
+    videoUrl: "/videos/video1.mp4", // ← положи файл в public/videos/
+    thumbnail: "/images/TN1.png",
     tags: ["Reels", "Моушн"],
     date: "12 фев 2025",
   },
   {
     id: 2,
-    title: "Эксперт по продажам — Shorts",
+    title: "Мармеладыч",
     description: "Упаковка контента для бизнес-тренера: динамичные нарезки с субтитрами",
-    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239023&autoplay=0",
-    thumbnail: "/images/TN2.png", // ← /images/thumb2.jpg
-    tags: ["Shorts", "Эксперт"],
+    videoUrl: "/videos/video2.mp4",
+    thumbnail: "/images/TN6.png",
+    tags: ["Reels", "Эксперт"],
     date: "8 фев 2025",
   },
   {
     id: 3,
+    title: "Эксперт по продажам — Shorts",
+    description: "Упаковка контента для бизнес-тренера: динамичные нарезки с субтитрами",
+    videoUrl: "/videos/video3.mp4",
+    thumbnail: "/images/TN2.png",
+    tags: ["Shorts", "Эксперт", "Моушн"],
+    date: "8 фев 2025",
+  },
+  {
+    id: 4,
     title: "Маркетинговое агентство — TikTok",
     description: "Креативные ролики для привлечения клиентов в digital-агентство",
-    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239026&autoplay=0",
-    thumbnail: "/images/TN3.png", // ← /images/thumb3.jpg
+    videoUrl: "/videos/video4.mp4",
+    thumbnail: "/images/TN3.png",
     tags: ["Reels"],
     date: "1 фев 2025",
   },
   {
-    id: 4,
+    id: 5,
     title: "Онлайн-школа — промо-ролики",
     description: "Серия рекламных видео для запуска онлайн-курса по маркетингу",
-    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239027&autoplay=0",
-    thumbnail: "/images/TN4.png", // ← /images/thumb4.jpg
+    videoUrl: "/videos/video5.mp4",
+    thumbnail: "/images/TN4.png",
     tags: ["Моушн"],
     date: "18 янв 2025",
   },
   {
-    id: 5,
+    id: 6,
     title: "Ресторан — контент для Stories",
     description: "Аппетитный видеоконтент с моушн-графикой для ресторана японской кухни",
-    videoUrl: "https://vk.com/clip_ext.php?oid=-232053066&id=456239028&autoplay=0",
-    thumbnail: "/images/TN5.png", // ← /images/thumb5.jpg
+    videoUrl: "/videos/video6.mp4",
+    thumbnail: "/images/TN5.png",
     tags: ["Моушн", "Анимация лого"],
     date: "10 янв 2025",
   },
@@ -84,7 +93,7 @@ export const processSteps = [
 ];
 
 export const about = {
-  text: "Привет, дорогой гость!\nМеня зовут Владислав — я монтажер.\n\nПомогаю бизнесу, блогерам и всем, кто создает контент для соцсетей.\n\nМоя основная задача — помочь сделать ваши ролики такими, чтобы они привлекали внимание, удерживали зрителя и работали на результат: будь то рост охватов, увеличение числа подписчиков или привлечение клиентов.",
+  text: "Привет, дорогой гость!\nЯ Помогаю бизнесу, блогерам и всем, кто создает контент для соцсетей.\n\nМоя основная задача — помочь сделать ваши ролики такими, чтобы они привлекали внимание, удерживали зрителя и работали на результат: будь то рост охватов, увеличение числа подписчиков или привлечение клиентов.",
   tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
 };
 

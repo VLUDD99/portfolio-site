@@ -240,3 +240,23 @@ body {
   background: #3A3A3C;
   border-color: #48484A;
 }
+
+/* ── LazyVideo: fullscreen — CSS fallback (inline styles via React state are primary) ── */
+.lv-container:fullscreen,
+.lv-container:-webkit-full-screen,
+.lv-container:-moz-full-screen {
+  border-radius: 0 !important;
+  aspect-ratio: unset !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.lv-container:fullscreen .lv-video,
+.lv-container:-webkit-full-screen .lv-video,
+.lv-container:-moz-full-screen .lv-video {
+  width: auto !important;
+  height: 100% !important;
+  max-width: calc(100vh * 9 / 16) !important;
+  object-fit: contain !important;
+}

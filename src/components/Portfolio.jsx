@@ -70,7 +70,7 @@ export default function Portfolio() {
 
         {/* Mobile: horizontal scroll, Desktop: grid */}
         <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2 -mx-4 px-4 md:mx-0 md:px-0"
-             style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch' }}>
+             style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}>
           <AnimatePresence mode="popLayout">
             {filtered.map((item, i) => (
               <motion.div key={item.id}
