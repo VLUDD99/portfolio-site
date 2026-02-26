@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHSlider } from '../hooks/useHSlider';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search } from 'lucide-react';
 import { portfolio } from '../data/content';
@@ -7,6 +8,7 @@ import LazyVideo from './LazyVideo';
 export default function Portfolio() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeTag, setActiveTag] = useState(null);
+  const sliderRef = useHSlider();
   const allTags = [...new Set(portfolio.flatMap(p => p.tags))];
 
   const filtered = portfolio.filter(item => {
@@ -69,8 +71,9 @@ export default function Portfolio() {
         </motion.div>
 
         {/* Mobile: horizontal scroll, Desktop: grid */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2 -mx-4 px-4 md:mx-0 md:px-0"
-             style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}>
+        <div ref={sliderRef}
+             className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-2 -mx-4 px-4 md:mx-0 md:px-0"
+             style={{ scrollbarWidth: 'none' }}>
           <AnimatePresence mode="popLayout">
             {filtered.map((item, i) => (
               <motion.div key={item.id}

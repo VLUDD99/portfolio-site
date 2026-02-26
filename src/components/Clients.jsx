@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Users } from 'lucide-react';
 import { clients } from '../data/content';
+import { useHSlider } from '../hooks/useHSlider';
 
 export default function Clients() {
+  const sliderRef = useHSlider();
   return (
     <section id="clients" className="py-12 md:py-24 px-4 md:px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
@@ -22,8 +24,9 @@ export default function Clients() {
         </motion.div>
 
         {/* Mobile: horizontal scroll, Desktop: grid */}
-        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 clients-scroll"
-             style={{ scrollbarWidth: 'none', WebkitOverflowScrolling: 'touch', touchAction: 'pan-x' }}>
+        <div ref={sliderRef}
+             className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 -mx-4 px-4 md:mx-0 md:px-0 clients-scroll"
+             style={{ scrollbarWidth: 'none' }}>
           <style>{`
             .clients-scroll::-webkit-scrollbar {
               display: none;
